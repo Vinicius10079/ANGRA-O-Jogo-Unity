@@ -46,7 +46,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1aff7a9a993b27848aa08f40fb64d8d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -145,8 +145,6 @@ MonoBehaviour:
   tipo: 0
   "tempor\xE1rio": 0
   transparente_Cor: {r: 0, g: 0, b: 0, a: 0}
-  sprites: []
-  poderes: []
   sfx: {fileID: 0}
 --- !u!114 &691908189667172081
 MonoBehaviour:

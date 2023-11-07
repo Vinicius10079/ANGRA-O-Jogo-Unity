@@ -20970,7 +20970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 0.7899319, b: 0, a: 1}
-  m_EffectDistance: {x: 1.9, y: -1.56}
+  m_EffectDistance: {x: 0.63, y: -1.02}
   m_UseGraphicAlpha: 1
 --- !u!114 &1031092457
 MonoBehaviour:
@@ -23605,9 +23605,10 @@ MonoBehaviour:
   delayDeMorte: 3
   "sa\xEDdaDeAtaques": {fileID: 1019567554}
   lampejo: {fileID: 143390462}
+  lampejo_Sfx: {fileID: 4851854273235076603, guid: 1f359045873247a41ab1271df634804c, type: 3}
   "m\xFAsicas":
   - {fileID: 8300000, guid: 988585d11860e114d91378f7c2a36963, type: 3}
-  - {fileID: 8300000, guid: e727e40a160913b45bb9ad807c665913, type: 3}
+  - {fileID: 8300000, guid: 86833a8dd6edcd54e9a03e25c6639e1f, type: 3}
 --- !u!50 &1084883514
 Rigidbody2D:
   serializedVersion: 4
@@ -23687,7 +23688,7 @@ MonoBehaviour:
   bossRush: 0
   destrancar_Comporta: 0
   sfx_Dano: {fileID: 0}
-  "valor_Pontua\xE7\xE3o": 10000
+  "valor_Pontua\xE7\xE3o": 100000
   "textoDePontua\xE7\xE3o": {fileID: 0}
   "textoDePontua\xE7\xE3o_Valor": {fileID: 0}
   "jingleDeVit\xF3ria_bgm": {fileID: 0}
@@ -30137,6 +30138,7 @@ GameObject:
   - component: {fileID: 1315645809}
   - component: {fileID: 1315645808}
   - component: {fileID: 1315645807}
+  - component: {fileID: 1315645810}
   m_Layer: 5
   m_Name: "Pontua\xE7\xE3o (Texto)"
   m_TagString: Untagged
@@ -30234,6 +30236,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 01000
+--- !u!114 &1315645810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315645803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2.18, y: -1.44}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1316184926
 GameObject:
   m_ObjectHideFlags: 0
@@ -33799,18 +33816,18 @@ CompositeCollider2D:
       - {x: -14.000029, y: 11.125}
       - {x: -15, y: 11.12497}
       - {x: -14.999971, y: -4.875}
-    - - {x: 2.9999747, y: 2.12499}
-      - {x: 3.0000393, y: 3.125}
+    - - {x: 2.999971, y: 2.125}
+      - {x: 3.0000293, y: 3.125}
       - {x: 7, y: 3.1250293}
       - {x: 6.9999704, y: 4.125}
       - {x: 2, y: 4.124971}
-      - {x: 2.0000253, y: 2.12499}
-    - - {x: -3.0000253, y: 2.12499}
+      - {x: 2.0000293, y: 2.125}
+    - - {x: -3.0000293, y: 2.125}
       - {x: -3.0000293, y: 4.125}
       - {x: -9, y: 4.124971}
       - {x: -8.99997, y: 3.125}
-      - {x: -4.00001, y: 3.1249707}
-      - {x: -3.9999747, y: 2.12499}
+      - {x: -4, y: 3.1249707}
+      - {x: -3.999971, y: 2.125}
     - - {x: 7.9999704, y: -1.875}
       - {x: 7.9999704, y: -0.875}
       - {x: 5, y: -0.8750293}

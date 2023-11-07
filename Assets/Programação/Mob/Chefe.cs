@@ -16,6 +16,7 @@ public class Chefe : MonoBehaviour
     public float delayDeMorte = 2f;
     public Transform saídaDeAtaques;
     public GameObject lampejo;
+    public GameObject lampejo_Sfx;
     public AudioClip[] músicas;
 
     bool diminuirVolume;
@@ -135,9 +136,10 @@ public class Chefe : MonoBehaviour
             jog.layer = LayerMask.NameToLayer("Jogador (Invencibilidade)");
         }
 
-        mob.AdicionarAPontuação();
+        FindObjectOfType<Pontuação>().pontuação += 100000;
 
         lampejo.SetActive(true);
+        Instantiate(lampejo_Sfx, transform.position, transform.rotation);
         sr.enabled = false;
         foreach (GameObject asa in asas)
         {

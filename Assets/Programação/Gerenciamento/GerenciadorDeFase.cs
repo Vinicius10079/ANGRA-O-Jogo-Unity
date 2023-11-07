@@ -79,7 +79,7 @@ public class GerenciadorDeFase : MonoBehaviour
 
     void Update()
     {
-        IrParaOChefe();
+        //IrParaOChefe();
 
         if (esperaJ1 == "iniciar")
         {
@@ -267,7 +267,7 @@ public class GerenciadorDeFase : MonoBehaviour
         SceneManager.LoadScene(cena);
     }
 
-
+    /*
     void IrParaOChefe()
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -285,4 +285,5 @@ public class GerenciadorDeFase : MonoBehaviour
             FindObjectOfType<Camera>().transform.position = GameObject.Find("Âncora (Câmera)").transform.position;
         }
     }
+    */
 }

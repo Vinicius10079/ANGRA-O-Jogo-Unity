@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "n\xE3oDesafiliarAoDespertar": 1
-  dano: 2
+  dano: 4
   "\xE2ncora": {fileID: 0}
   "proj\xE9til": {fileID: 0}
   destruirAoContato: 0

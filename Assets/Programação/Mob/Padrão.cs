@@ -90,7 +90,6 @@ public class Padrão : MonoBehaviour
                     if (Mathf.Abs(jogadorAlvo.transform.position.x) < Mathf.Abs(transform.position.x + 3) &&
                         Mathf.Abs(jogadorAlvo.transform.position.y) < Mathf.Abs(transform.position.y + 1))
                     {
-                        print("esq");
                         tempoDeCorrida = 0;
                     }
                 }
@@ -136,6 +135,18 @@ public class Padrão : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Atacando"))
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+        if (tipo == Tipo.atirador)
+        {
+            if (jogadorAlvo.transform.position.x > transform.position.x + 0.3)
+            {
+                transform.eulerAngles = new Vector3(0, 180);
+            }
+            else if (jogadorAlvo.transform.position.x < transform.position.x - 0.3)
+            {
+                transform.eulerAngles = Vector3.zero;
+            }
         }
 
         if (mob.dano)

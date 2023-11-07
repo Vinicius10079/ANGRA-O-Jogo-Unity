@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.56, y: 24.65}
+  m_AnchoredPosition: {x: -40.390007, y: 24.65}
   m_SizeDelta: {x: 599.09, y: 64.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &321638489
@@ -203,7 +203,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "PONTUA\xC7\xC3O: 0110000"
+  m_Text: "SUA PONTUA\xC7\xC3O: 0110000"
 --- !u!114 &321638491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +625,8 @@ MonoBehaviour:
   telaPreta: {fileID: 2040088213}
   continuar_Texto: {fileID: 1304035419}
   "confirma\xE7\xE3o_sfx": {fileID: 0}
+  "textoDePontua\xE7\xE3o": {fileID: 321638490}
+  "textoDeMelhorPontua\xE7\xE3o": {fileID: 1462217744}
 --- !u!82 &1331097351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -721,6 +723,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1462217741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462217742}
+  - component: {fileID: 1462217745}
+  - component: {fileID: 1462217744}
+  - component: {fileID: 1462217743}
+  m_Layer: 5
+  m_Name: "Melhor Pontua\xE7\xE3o"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1462217742
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462217741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1675466198}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 97, y: -39}
+  m_SizeDelta: {x: 873.87, y: 64.93}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1462217743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462217741}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_EffectDistance: {x: 2.59, y: -0.84}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1462217744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462217741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 80357010c131c974b832b25f104763f9, type: 3}
+    m_FontSize: 42
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 70
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "MELHOR PONTUA\xC7\xC3O: 0110000"
+--- !u!222 &1462217745
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462217741}
+  m_CullTransparentMesh: 1
 --- !u!1 &1675466197
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,6 +848,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 321638487}
+  - {fileID: 1462217742}
   m_Father: {fileID: 1931126192}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -941,7 +1040,7 @@ GameObject:
   - component: {fileID: 1932266321}
   - component: {fileID: 1932266320}
   m_Layer: 5
-  m_Name: Obrigado Por  Jogar
+  m_Name: Obrigado Por Jogar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

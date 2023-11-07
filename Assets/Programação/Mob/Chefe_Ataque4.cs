@@ -17,10 +17,6 @@ public class Chefe_Ataque4 : MonoBehaviour
 
     void Awake()
     {
-        if (GameObject.FindGameObjectsWithTag("Ataque (Chefe)").Length > 0)
-        {
-            Destroy(gameObject);
-        }
         jogadores = GameObject.FindGameObjectsWithTag("Player");
         alvo = jogadores[Random.Range(0, jogadores.Length)].transform;
 

@@ -59,7 +59,6 @@ public class Chefe_Ataque5 : MonoBehaviour
 
             if (disparos > 3)
             {
-                print("Ataque 3 fim");
                 Destroy(gameObject);
             }
 

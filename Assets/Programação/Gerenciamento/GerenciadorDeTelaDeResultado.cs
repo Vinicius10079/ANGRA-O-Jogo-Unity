@@ -9,6 +9,8 @@ public class GerenciadorDeTelaDeResultado : MonoBehaviour
     public GameObject telaPreta;
     public GameObject continuar_Texto;
     public GameObject confirmação_sfx;
+    public Text textoDePontuação;
+    public Text textoDeMelhorPontuação;
 
     bool podeContinuar;
     bool mudarCena_Chamado;
@@ -16,7 +18,6 @@ public class GerenciadorDeTelaDeResultado : MonoBehaviour
     int pontuaçãoAtual;
     int pontuação1;
     bool salvo = false;
-    string nome;
 
     void Awake()
     {
@@ -24,6 +25,17 @@ public class GerenciadorDeTelaDeResultado : MonoBehaviour
 
         pontuaçãoAtual = PlayerPrefs.GetInt("Pontuacao");
         pontuação1 = PlayerPrefs.GetInt("Pontuacao 1");
+        textoDePontuação.text = "SUA PONTUAÇÃO: " + pontuaçãoAtual;
+        if (pontuaçãoAtual > pontuação1)
+        {
+            textoDeMelhorPontuação.text = "MELHOR PONTUAÇÃO: " + pontuaçãoAtual;
+            PlayerPrefs.SetInt("Pontuacao 1", pontuaçãoAtual);
+        }
+        else
+        {
+            textoDeMelhorPontuação.text = "MELHOR PONTUAÇÃO: " + pontuação1;
+        }
+        
     }
 
     void Start()
@@ -39,7 +51,7 @@ public class GerenciadorDeTelaDeResultado : MonoBehaviour
             {
                 Instantiate(confirmação_sfx);
             }
-            SalvarPontuação();
+
             StartCoroutine(MudarDeCena("Abertura"));
 
             //Instantiate(somDeConfirmação_sfx);
@@ -64,20 +76,5 @@ public class GerenciadorDeTelaDeResultado : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(cena);
-    }
-
-    public void SalvarPontuação()
-    {
-        if (nome == "")
-        {
-            nome = "PLR";
-        }
-
-        if (pontuaçãoAtual >= pontuação1 && salvo == false)
-        {
-            PlayerPrefs.SetInt("Pontuacao 1", pontuaçãoAtual);
-            PlayerPrefs.SetString("Nome 1", nome);
-            salvo = true;
-        }
     }
 }

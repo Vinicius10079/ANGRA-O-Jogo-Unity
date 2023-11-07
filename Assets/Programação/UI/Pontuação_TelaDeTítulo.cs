@@ -9,9 +9,11 @@ public class Pontuação_TelaDeTítulo : MonoBehaviour
 
     void Awake()
     {
-        if (PlayerPrefs.GetInt("Pontuacao 1") != 0)
+        if (PlayerPrefs.GetInt("Pontuacao 1") == 0)
         {
-            textos[0].GetComponent<Text>().text = PlayerPrefs.GetInt("Pontuacao 1") + "";
+            PlayerPrefs.SetInt("Pontuacao 1", 100000);
         }
+        
+        textos[0].GetComponent<Text>().text = PlayerPrefs.GetInt("Pontuacao 1") + "";
     }
 }
