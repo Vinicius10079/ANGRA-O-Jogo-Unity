@@ -47,7 +47,7 @@ public class Item : MonoBehaviour
             switch (tipo)
             {
                 case Item_Tipo.refilDeEnergia:
-                    collision.gameObject.GetComponent<Mob>().energia.x += 10;
+                    collision.gameObject.GetComponent<Mob>().energia.x += 6;
                     break;
             }
 

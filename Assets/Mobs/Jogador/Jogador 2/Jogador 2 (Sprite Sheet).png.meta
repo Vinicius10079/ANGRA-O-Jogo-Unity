@@ -132,12 +132,12 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 152
+        x: 6
+        y: 119
         width: 17
         height: 30
-      alignment: 9
-      pivot: {x: 0.41058823, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,8 +153,8 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 151
+        x: 30
+        y: 118
         width: 16
         height: 32
       alignment: 0
@@ -174,10 +174,10 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 113
-        width: 15
-        height: 31
+        x: 5
+        y: 80
+        width: 16
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_3
       rect:
         serializedVersion: 2
-        x: 25
-        y: 115
-        width: 16
-        height: 28
+        x: 26
+        y: 80
+        width: 14
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,12 +216,12 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 78
-        width: 16
-        height: 29
-      alignment: 9
-      pivot: {x: 0.48, y: 0.5862069}
+        x: 51
+        y: 80
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_5
       rect:
         serializedVersion: 2
-        x: 24
-        y: 78
-        width: 14
-        height: 31
+        x: 1
+        y: 43
+        width: 24
+        height: 30
       alignment: 9
-      pivot: {x: 0.5607143, y: 0.5483871}
+      pivot: {x: 0.6, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,12 +258,12 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_6
       rect:
         serializedVersion: 2
-        x: 49
-        y: 78
-        width: 18
+        x: 32
+        y: 43
+        width: 24
         height: 30
       alignment: 9
-      pivot: {x: 0.5, y: 0.53333336}
+      pivot: {x: 0.34, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,12 +279,12 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 41
-        width: 23
-        height: 30
+        x: 1
+        y: 2
+        width: 24
+        height: 32
       alignment: 9
-      pivot: {x: 0.61, y: 0.5}
+      pivot: {x: 0.6, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: Jogador 2 (Sprite Sheet)_8
       rect:
         serializedVersion: 2
-        x: 30
-        y: 41
-        width: 22
-        height: 30
+        x: 31
+        y: 2
+        width: 23
+        height: 32
       alignment: 9
-      pivot: {x: 0.31981242, y: 0.5048935}
+      pivot: {x: 0.32, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,48 +313,6 @@ TextureImporter:
       bones: []
       spriteID: c883daee4e4309e4b9bdc63a02478ec8
       internalID: 406266503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jogador 2 (Sprite Sheet)_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 23
-        height: 32
-      alignment: 9
-      pivot: {x: 0.58, y: 0.53}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8cb6f91acb61e24b8f87b2a3bd84d8d
-      internalID: 147141730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jogador 2 (Sprite Sheet)_10
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 21
-        height: 32
-      alignment: 9
-      pivot: {x: 0.39, y: 0.53}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 243dc8620e4a9d54bb972167cf8d2b20
-      internalID: -2017469623
       vertices: []
       indices: 
       edges: []
@@ -376,9 +334,7 @@ TextureImporter:
       Jogador 2 (Sprite Sheet)_5: -1314604143
       Jogador 2 (Sprite Sheet)_7: 1272484952
       Jogador 2 (Sprite Sheet)_1: -1286389348
-      Jogador 2 (Sprite Sheet)_9: 147141730
       Jogador 2 (Sprite Sheet)_4: -1219980041
-      Jogador 2 (Sprite Sheet)_10: -2017469623
       Jogador 2 (Sprite Sheet)_8: 406266503
       Jogador 2 (Sprite Sheet)_0: -1765741448
   spritePackingTag: 

@@ -9,6 +9,7 @@ public class FunçõesDeCâmera : MonoBehaviour
     public float amplitude = 0.1f;
     public float velocidade = 1.0f;
     public float duração = 2.0f;
+    public bool balançandoCâmera;
 
     Camera câmeraPrincipal;
     Vector3 posiçãoInicial;
@@ -40,6 +41,7 @@ public class FunçõesDeCâmera : MonoBehaviour
 
     IEnumerator BalançarCamera()
     {
+        balançandoCâmera = true;
         AtualizarPosiçãoInicial();
 
         tempoInicial = Time.time;
@@ -52,5 +54,6 @@ public class FunçõesDeCâmera : MonoBehaviour
         }
 
         câmeraPrincipal.transform.position = posiçãoInicial;
+        balançandoCâmera = false;
     }
 }

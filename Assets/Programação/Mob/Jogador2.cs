@@ -180,7 +180,11 @@ public class Jogador2 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Jogador (Invencibilidade)");
             mob.dano = false;
             mob.energia.x -= mob.valorDeDano;
-            FindObjectOfType<FunçõesDeCâmera>().balançarCâmera = true;
+
+            if (FindObjectOfType<FunçõesDeCâmera>().balançandoCâmera == false)
+            {
+                FindObjectOfType<FunçõesDeCâmera>().balançarCâmera = true;
+            }
 
             combo_Texto.duração = -1;
             pts.pontuação = pts.pontuação - 800;

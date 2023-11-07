@@ -44,7 +44,11 @@ public class Inimigo_Arremessado : MonoBehaviour
                 Instantiate(explosão, transform.position, transform.rotation);
             }
 
-            FindObjectOfType<FunçõesDeCâmera>().balançarCâmera = true;
+            if (FindObjectOfType<FunçõesDeCâmera>().balançandoCâmera == false)
+            {
+                FindObjectOfType<FunçõesDeCâmera>().balançarCâmera = true;
+            }
+            
             Destroy(gameObject);
         }
     }

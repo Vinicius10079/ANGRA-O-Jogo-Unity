@@ -17,7 +17,6 @@ public class GerenciadorDeTelaDeResultado : MonoBehaviour
 
     int pontuaçãoAtual;
     int pontuação1;
-    bool salvo = false;
 
     void Awake()
     {
