@@ -301,7 +301,7 @@ public class Jogador2 : MonoBehaviour
 
     void RetomarOControle()
     {
-        mob.controle = controle_Inicial;
+        mob.controle = Mob.Controle.jogador;
     }
     public void RetirarControle()
     {
