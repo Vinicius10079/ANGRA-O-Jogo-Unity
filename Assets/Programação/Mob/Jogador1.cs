@@ -135,22 +135,37 @@ public class Jogador1 : MonoBehaviour
 
     public void Movimentar()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < -0.5f)
+        if (Input.GetKey(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 180);
             rb.velocity = new Vector2(-Mathf.Abs(mob.velocidade), rb.velocity.y);
         }
-        
-        if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0.5f)
+        if (Input.GetKey(KeyCode.D))
         {
             transform.eulerAngles = Vector3.zero;
             rb.velocity = new Vector2(Mathf.Abs(mob.velocidade), rb.velocity.y);
         }
-        
-        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) &&
-            Input.GetAxis("Horizontal") < 0.5 && Input.GetAxis("Horizontal") > -0.5)
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+        if (TesteDeControles.joystickHabilitado)
+        {
+            if (Input.GetAxis("Horizontal") < -0.5f)
+            {
+                transform.eulerAngles = new Vector3(0, 180);
+                rb.velocity = new Vector2(-Mathf.Abs(mob.velocidade), rb.velocity.y);
+            }
+            if (Input.GetAxis("Horizontal") > 0.5f)
+            {
+                transform.eulerAngles = Vector3.zero;
+                rb.velocity = new Vector2(Mathf.Abs(mob.velocidade), rb.velocity.y);
+            }
+            if (Input.GetAxis("Horizontal") < 0.5 && Input.GetAxis("Horizontal") > -0.5)
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
     }
     public void Atacar()
@@ -158,7 +173,7 @@ public class Jogador1 : MonoBehaviour
         int resultado;
         resultado = (int)Random.Range(0, 7f);
 
-        if (Input.GetKeyDown(KeyCode.Y) || Input.GetButtonDown("Oeste"))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             mob.projétilPadrão.GetComponent<Projétil>().pai = gameObject;
 
@@ -169,6 +184,21 @@ public class Jogador1 : MonoBehaviour
                 Instantiate(ataque_Voz_Sfx, transform.position, transform.rotation);
             }
         }
+
+        if (TesteDeControles.joystickHabilitado)
+        {
+            if (Input.GetButtonDown("Oeste"))
+            {
+                mob.projétilPadrão.GetComponent<Projétil>().pai = gameObject;
+
+                anim.SetTrigger("Ataque");
+
+                if (resultado > 3)
+                {
+                    Instantiate(ataque_Voz_Sfx, transform.position, transform.rotation);
+                }
+            }
+        }
     }
     public void Instanciar_Projétil()
     {
@@ -176,12 +206,21 @@ public class Jogador1 : MonoBehaviour
     }
     public void Saltar()
     {
-        if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Sul"))
+        if (mob.estáNoSolo)
         {
-            if (mob.estáNoSolo)
+            if (Input.GetKeyDown(KeyCode.G))
             {
                 rb.velocity = new Vector2(rb.velocity.x, mob.forçaDeSalto);
                 Instantiate(salto_Sfx, transform.position, transform.rotation);
+            }
+
+            if (TesteDeControles.joystickHabilitado)
+            {
+                if (Input.GetButtonDown("Sul"))
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, mob.forçaDeSalto);
+                    Instantiate(salto_Sfx, transform.position, transform.rotation);
+                }
             }
         }
     }

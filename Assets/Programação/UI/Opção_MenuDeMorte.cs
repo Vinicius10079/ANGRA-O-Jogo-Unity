@@ -9,6 +9,7 @@ public class Opção_MenuDeMorte : MonoBehaviour
 
     void Awake()
     {
+        gf = FindObjectOfType<GerenciadorDeFase>();
         gf.podePausar = false;
     }
 

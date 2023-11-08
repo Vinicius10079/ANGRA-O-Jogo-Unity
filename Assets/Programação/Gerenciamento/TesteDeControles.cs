@@ -6,6 +6,8 @@ public class TesteDeControles : MonoBehaviour
 {
     public string[] nomesDosControles;
 
+    public static bool joystickHabilitado = false;
+
     void Start()
     {
         nomesDosControles = Input.GetJoystickNames();

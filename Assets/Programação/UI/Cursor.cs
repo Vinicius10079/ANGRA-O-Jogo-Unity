@@ -17,6 +17,7 @@ public class Cursor : MonoBehaviour
     public RectTransform opção_esquerda;
     public RectTransform opção_direita;
 
+    bool moveu;
     string moveuPara;
 
     Color corInicial;
@@ -40,8 +41,7 @@ public class Cursor : MonoBehaviour
             switch (jogador)
             {
                 case 1:
-                    if (Input.GetKeyDown(KeyCode.W) || Input.GetAxis("Vertical") > 0.5f 
-                        && opção_cima != null)
+                    if (Input.GetKeyDown(KeyCode.W) && opção_cima != null)
                     {
                         transform.position = opção_cima.position;
                         opçãoAtual = opção_cima.GetComponent<Opção>();
@@ -50,8 +50,7 @@ public class Cursor : MonoBehaviour
 
                         moveuPara = "cima";
                     }
-                    if (Input.GetKeyDown(KeyCode.S) || Input.GetAxis("Vertical") < -0.5f
-                        && opção_baixo != null)
+                    if (Input.GetKeyDown(KeyCode.S) && opção_baixo != null)
                     {
                         transform.position = opção_baixo.position;
                         opçãoAtual = opção_baixo.GetComponent<Opção>();
@@ -60,8 +59,7 @@ public class Cursor : MonoBehaviour
 
                         moveuPara = "baixo";
                     }
-                    if (Input.GetKeyDown(KeyCode.A) || Input.GetAxis("Horizontal") < -0.5f
-                        && opção_esquerda != null)
+                    if (Input.GetKeyDown(KeyCode.A) && opção_esquerda != null)
                     {
                         transform.position = opção_esquerda.position;
                         opçãoAtual = opção_esquerda.GetComponent<Opção>();
@@ -70,8 +68,7 @@ public class Cursor : MonoBehaviour
 
                         moveuPara = "esquerda";
                     }
-                    if (Input.GetKeyDown(KeyCode.D) || Input.GetAxis("Horizontal") > 0.5f
-                        && opção_direita != null)
+                    if (Input.GetKeyDown(KeyCode.D) && opção_direita != null)
                     {
                         transform.position = opção_direita.position;
                         opçãoAtual = opção_direita.GetComponent<Opção>();
@@ -79,6 +76,56 @@ public class Cursor : MonoBehaviour
                         AtualizarDireções();
 
                         moveuPara = "direita";
+                    }
+
+                    if (TesteDeControles.joystickHabilitado)
+                    {
+                        if (Input.GetAxis("Vertical") > 0.5f && opção_cima != null && moveu == false)
+                        {
+                            transform.position = opção_cima.position;
+                            opçãoAtual = opção_cima.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "cima";
+                            moveu = true;
+                        }
+                        if (Input.GetAxis("Vertical") < -0.5f && opção_baixo != null && moveu == false)
+                        {
+                            transform.position = opção_baixo.position;
+                            opçãoAtual = opção_baixo.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "baixo";
+                            moveu = true;
+                        }
+                        if (Input.GetAxis("Horizontal") < -0.5f && opção_esquerda != null && moveu == false)
+                        {
+                            transform.position = opção_esquerda.position;
+                            opçãoAtual = opção_esquerda.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "esquerda";
+                            moveu = true;
+                        }
+                        if (Input.GetAxis("Horizontal") > 0.5f && opção_direita != null && moveu == false)
+                        {
+                            transform.position = opção_direita.position;
+                            opçãoAtual = opção_direita.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "direita";
+                            moveu = true;
+                        }
+
+                        if (Input.GetAxis("Vertical") < 0.5f && Input.GetAxis("Vertical") > -0.5f 
+                            && Input.GetAxis("Horizontal") < 0.5f && Input.GetAxis("Horizontal") > -0.5f)
+                        {
+                            moveu = false;
+                        }
                     }
                     break;
 
@@ -119,6 +166,56 @@ public class Cursor : MonoBehaviour
 
                         moveuPara = "direita";
                     }
+
+                    if (TesteDeControles.joystickHabilitado)
+                    {
+                        if (Input.GetAxis("Vertical 2") > 0.5f && opção_cima != null && moveu == false)
+                        {
+                            transform.position = opção_cima.position;
+                            opçãoAtual = opção_cima.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "cima";
+                            moveu = true;
+                        }
+                        if (Input.GetAxis("Vertical 2") < -0.5f && opção_baixo != null && moveu == false)
+                        {
+                            transform.position = opção_baixo.position;
+                            opçãoAtual = opção_baixo.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "baixo";
+                            moveu = true;
+                        }
+                        if (Input.GetAxis("Horizontal 2") < -0.5f && opção_esquerda != null && moveu == false)
+                        {
+                            transform.position = opção_esquerda.position;
+                            opçãoAtual = opção_esquerda.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "esquerda";
+                            moveu = true;
+                        }
+                        if (Input.GetAxis("Horizontal 2") > 0.5f && opção_direita != null && moveu == false)
+                        {
+                            transform.position = opção_direita.position;
+                            opçãoAtual = opção_direita.GetComponent<Opção>();
+
+                            AtualizarDireções();
+
+                            moveuPara = "direita";
+                            moveu = true;
+                        }
+
+                        if (Input.GetAxis("Vertical 2") < 0.5f && Input.GetAxis("Vertical 2") > -0.5f
+                            && Input.GetAxis("Horizontal 2") < 0.5f && Input.GetAxis("Horizontal 2") > -0.5f)
+                        {
+                            moveu = false;
+                        }
+                    }
                     break;
             }
         }
@@ -126,7 +223,16 @@ public class Cursor : MonoBehaviour
         switch (jogador)
         {
             case 1:
-                if (Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Sul") 
+                if (Input.GetKeyDown(KeyCode.G) && opçãoAtual.opçãoBloqueada == false)
+                {
+                    if (confirmação_sfx != null)
+                    {
+                        Instantiate(confirmação_sfx);
+                    }
+                    opçãoAtual.evento.Invoke();
+                }
+
+                if (TesteDeControles.joystickHabilitado && Input.GetButtonDown("Sul")
                     && opçãoAtual.opçãoBloqueada == false)
                 {
                     if (confirmação_sfx != null)
@@ -145,6 +251,16 @@ public class Cursor : MonoBehaviour
                         Instantiate(confirmação_sfx);
                     }
                     opçãoAtual.evento_J2.Invoke();
+                }
+
+                if (TesteDeControles.joystickHabilitado && Input.GetButtonDown("Sul 2")
+                    && opçãoAtual.opçãoBloqueada == false)
+                {
+                    if (confirmação_sfx != null)
+                    {
+                        Instantiate(confirmação_sfx);
+                    }
+                    opçãoAtual.evento.Invoke();
                 }
                 break;
         }

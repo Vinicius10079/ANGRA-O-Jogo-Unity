@@ -35,22 +35,46 @@ public class GerenciadorDeTelaDeTítulo : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Start") 
-            && mudarCena_Chamado == false && podeIniciar)
+        if (mudarCena_Chamado == false && podeIniciar)
         {
-            if (confirmação_sfx != null)
-            {
-                Instantiate(confirmação_sfx);
+            if (Input.GetKeyDown(KeyCode.Z))
+        {
+                if (confirmação_sfx != null)
+                {
+                    Instantiate(confirmação_sfx);
+                }
+
+                iniciar_Texto.GetComponent<Animator>().enabled = false;
+                iniciar_Texto.GetComponent<Text>().enabled = true;
+
+                GetComponent<AudioSource>().enabled = false;
+
+                StartCoroutine(MudarDeCena(cenaACarregar));
+
+                //Instantiate(somDeConfirmação_sfx);
             }
-            
-            iniciar_Texto.GetComponent<Animator>().enabled = false;
-            iniciar_Texto.GetComponent<Text>().enabled = true;
 
-            GetComponent<AudioSource>().enabled = false;
+            if (Input.GetButtonDown("Start") && TesteDeControles.joystickHabilitado)
+            {
+                if (confirmação_sfx != null)
+                {
+                    Instantiate(confirmação_sfx);
+                }
 
-            StartCoroutine(MudarDeCena(cenaACarregar));
+                iniciar_Texto.GetComponent<Animator>().enabled = false;
+                iniciar_Texto.GetComponent<Text>().enabled = true;
 
-            //Instantiate(somDeConfirmação_sfx);
+                GetComponent<AudioSource>().enabled = false;
+
+                StartCoroutine(MudarDeCena(cenaACarregar));
+
+                //Instantiate(somDeConfirmação_sfx);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            TesteDeControles.joystickHabilitado = !TesteDeControles.joystickHabilitado;
         }
     }
 

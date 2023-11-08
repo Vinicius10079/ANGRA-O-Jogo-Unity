@@ -116,7 +116,7 @@ public class GerenciadorDeFase : MonoBehaviour
 
         AtualizarTextosDeEspera();
 
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Start"))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (esperaJ1 == "pronto")
             {
@@ -129,7 +129,7 @@ public class GerenciadorDeFase : MonoBehaviour
                 //jogador1.GetComponent<Jogador1>().Invoke("DesativarInvencibilidade", 2f);
             }
         }
-        if (Input.GetKeyDown(KeyCode.M) /*|| Input.GetButtonDown("Start 2")*/)
+        if (Input.GetKeyDown(KeyCode.M))
         {
             if (esperaJ2 == "pronto")
             {
@@ -144,11 +144,47 @@ public class GerenciadorDeFase : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Select") /*|| 
-            Input.GetButtonDown("Select 2")*/ && podePausar)
+        if (Input.GetKeyDown(KeyCode.Space) && podePausar)
         {
             pause = !pause;
         }
+
+        if (TesteDeControles.joystickHabilitado)
+        {
+            if (Input.GetButtonDown("Start"))
+            {
+                if (esperaJ1 == "pronto")
+                {
+                    esperaJ1 = "";
+                    esperaJ1_Texto.gameObject.SetActive(false);
+                    hudJ1.SetActive(true);
+
+                    jogador1.transform.position = GameObject.Find("Ponto Inicial (J1)").transform.position;
+                    jogador1.SetActive(true);
+                    //jogador1.GetComponent<Jogador1>().Invoke("DesativarInvencibilidade", 2f);
+                }
+            }
+            if (Input.GetButtonDown("Start 2"))
+            {
+                if (esperaJ2 == "pronto")
+                {
+                    esperaJ2 = "";
+                    esperaJ2_Texto.gameObject.SetActive(false);
+                    hudJ2.SetActive(true);
+
+                    jogador2.transform.position = GameObject.Find("Ponto Inicial (J2)").transform.position;
+                    jogador2.SetActive(true);
+                    //jogador2.GetComponent<Jogador2>().Invoke("DesativarInvencibilidade", 2f);
+
+                }
+            }
+
+            if (Input.GetButtonDown("Select") || Input.GetButtonDown("Select 2") && podePausar)
+            {
+                pause = !pause;
+            }
+        }
+
         if (pause == false)
         {
             menuDePausa.SetActive(false);
@@ -158,6 +194,11 @@ public class GerenciadorDeFase : MonoBehaviour
         {
             menuDePausa.SetActive(true);
             Time.timeScale = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            TesteDeControles.joystickHabilitado = !TesteDeControles.joystickHabilitado;
         }
     }
 
