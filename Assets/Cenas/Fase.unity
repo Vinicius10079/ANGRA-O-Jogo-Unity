@@ -23676,7 +23676,7 @@ MonoBehaviour:
   velocidadeHorizontal_Inicial: 0
   velocidadeVertical_Inicial: 0
   podeSaltar: 0
-  controle: 0
+  controle: 1
   retrato: {fileID: 0}
   energia: {x: 300, y: 300}
   "muni\xE7\xE3o": {x: 0, y: 0}

@@ -10,6 +10,7 @@ public class Jogador2 : MonoBehaviour
     public GameObject dano_Voz_Sfx;
     public GameObject morte_Voz_Sfx;
     bool sair;
+    bool fimDeDano;
 
     GerenciadorDeFase gf;
     Mob mob;
@@ -80,6 +81,11 @@ public class Jogador2 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Jogador (Invencibilidade)");
             anim.Play("À Teleportar");
         }
+
+        if (fimDeDano)
+        {
+            sr.color = Color.white;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -116,6 +122,7 @@ public class Jogador2 : MonoBehaviour
         mob.controle = Mob.Controle.jogador;
         DesativarInvencibilidade();
         gf.podePausar = true;
+        fimDeDano = true;
     }
 
     void Movimentar()
@@ -212,8 +219,10 @@ public class Jogador2 : MonoBehaviour
 
     IEnumerator Dano()
     {
+        
         if (mob.energia.x > 0)
         {
+            fimDeDano = false;
             gameObject.layer = LayerMask.NameToLayer("Jogador (Invencibilidade)");
             mob.dano = false;
             mob.energia.x -= mob.valorDeDano;
@@ -245,6 +254,7 @@ public class Jogador2 : MonoBehaviour
             yield return new WaitForSeconds(mob.tempoDeIvulnerabilidade);
 
             DesativarInvencibilidade();
+            fimDeDano = true;
         }
 
     }
@@ -318,7 +328,7 @@ public class Jogador2 : MonoBehaviour
     }
     public void DesativarInvencibilidade()
     {
-        sr.color = cor_Inicial;
+        sr.color = Color.white;
         gameObject.layer = LayerMask.NameToLayer("Jogador");
     }
     public void HabilitarColisoresDeCaixa()

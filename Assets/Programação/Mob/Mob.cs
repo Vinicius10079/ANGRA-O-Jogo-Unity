@@ -136,13 +136,16 @@ public class Mob : MonoBehaviour
             transform.Find("Ícone").GetComponent<SpriteRenderer>().enabled = true;
         }
 
-        if (plataformaMóvel != null)
+        if (gameObject.tag == "Player")
         {
-            transform.parent = plataformaMóvel.transform;
-        }
-        else
-        {
-            transform.parent = null;
+            if (plataformaMóvel != null)
+            {
+                transform.parent = plataformaMóvel.transform;
+            }
+            else
+            {
+                transform.parent = null;
+            }
         }
     }
 

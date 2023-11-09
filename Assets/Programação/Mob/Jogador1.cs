@@ -10,6 +10,7 @@ public class Jogador1 : MonoBehaviour
     public GameObject dano_Voz_Sfx;
     public GameObject morte_Voz_Sfx;
     bool sair;
+    bool fimDeDano;
 
     GerenciadorDeFase gf;
     Mob mob;
@@ -79,6 +80,11 @@ public class Jogador1 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Jogador (Invencibilidade)");
             anim.Play("Desaparição");
         }
+
+        if (fimDeDano)
+        {
+            sr.color = Color.white;
+        }
     }
 
     void OnBecameInvisible()
@@ -131,6 +137,7 @@ public class Jogador1 : MonoBehaviour
         mob.controle = Mob.Controle.jogador;
         DesativarInvencibilidade();
         gf.podePausar = true;
+        fimDeDano = true;
     }
 
     public void Movimentar()
@@ -229,6 +236,7 @@ public class Jogador1 : MonoBehaviour
     {
         if (mob.energia.x > 0)
         {
+            fimDeDano = false;
             gameObject.layer = LayerMask.NameToLayer("Jogador (Invencibilidade)");
             mob.dano = false;
             mob.energia.x -= mob.valorDeDano;
@@ -260,6 +268,7 @@ public class Jogador1 : MonoBehaviour
             yield return new WaitForSeconds(mob.tempoDeIvulnerabilidade);
 
             DesativarInvencibilidade();
+            fimDeDano = true;
         }
 
     }
@@ -311,6 +320,7 @@ public class Jogador1 : MonoBehaviour
 
         Instantiate(morte_Voz_Sfx, transform.position, transform.rotation);
         DesativarInvencibilidade();
+        fimDeDano = true;
         gameObject.SetActive(false);
     }
 
@@ -333,7 +343,7 @@ public class Jogador1 : MonoBehaviour
     }
     public void DesativarInvencibilidade()
     {
-        sr.color = cor_Inicial;
+        sr.color = Color.white;
         gameObject.layer = LayerMask.NameToLayer("Jogador");
     }
     public void HabilitarColisoresDeCaixa()
