@@ -7,8 +7,6 @@ public class PlataformaMóvel : MonoBehaviour
     public Transform destino1, destino2, destinoAtual;
     public float velocidade;
 
-    GameObject jog;
-
     void Awake()
     {
         destino1 = transform.GetChild(0);
@@ -32,33 +30,18 @@ public class PlataformaMóvel : MonoBehaviour
             destinoAtual = destino1;
         }
     }
-
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.transform.position.y >= transform.position.y + 1.5f)
-            {
-                jog = collision.gameObject;
-                jog.transform.parent = transform;
-            }
-            else if (jog != null)
-            {
-                jog.transform.parent = null;
-                jog = null;
-            }
+            collision.gameObject.GetComponent<Mob>().plataformaMóvel = gameObject;
         }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && jog != null)
+        if (collision.gameObject.tag == "Player")
         {
-            if (jog.transform.parent != null)
-            {
-                jog.transform.parent = null;
-            }
-            
-            jog = null;
+            collision.gameObject.GetComponent<Mob>().plataformaMóvel = null;
         }
     }
 }

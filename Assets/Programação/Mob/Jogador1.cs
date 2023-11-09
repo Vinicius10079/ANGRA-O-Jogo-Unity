@@ -129,7 +129,7 @@ public class Jogador1 : MonoBehaviour
         HabilitarColisoresDeCaixa();
         rb.bodyType = RigidbodyType2D.Dynamic;
         mob.controle = Mob.Controle.jogador;
-        gameObject.layer = LayerMask.NameToLayer("Jogador");
+        DesativarInvencibilidade();
         gf.podePausar = true;
     }
 
@@ -267,7 +267,7 @@ public class Jogador1 : MonoBehaviour
     {
         transform.parent = null;
 
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+        if (FindObjectOfType<Jogador2>() != null)
         {
             if (mob.jogador == 1)
             {
@@ -296,7 +296,7 @@ public class Jogador1 : MonoBehaviour
             gf.esperaJ1 = "inativo";
             gf.esperaJ2 = "inativo";
             gf.esperaJ2_Texto.gameObject.SetActive(true);
-
+            
             gf.ReiniciarCena();
         }
 
@@ -310,7 +310,7 @@ public class Jogador1 : MonoBehaviour
         }
 
         Instantiate(morte_Voz_Sfx, transform.position, transform.rotation);
-
+        DesativarInvencibilidade();
         gameObject.SetActive(false);
     }
 

@@ -114,7 +114,7 @@ public class Jogador2 : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         mob.controle = Mob.Controle.jogador;
-        gameObject.layer = LayerMask.NameToLayer("Jogador");
+        DesativarInvencibilidade();
         gf.podePausar = true;
     }
 
@@ -252,7 +252,7 @@ public class Jogador2 : MonoBehaviour
     {
         transform.parent = null;
 
-        if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+        if (FindObjectOfType<Jogador1>() != null)
         {
             if (mob.jogador == 1)
             {
@@ -281,7 +281,7 @@ public class Jogador2 : MonoBehaviour
             gf.esperaJ1 = "inativo";
             gf.esperaJ2 = "inativo";
             gf.esperaJ2_Texto.gameObject.SetActive(true);
-
+            
             gf.ReiniciarCena();
         }
 
@@ -295,7 +295,7 @@ public class Jogador2 : MonoBehaviour
         }
 
         Instantiate(morte_Voz_Sfx, transform.position, transform.rotation);
-
+        DesativarInvencibilidade();
         gameObject.SetActive(false);
     }
 

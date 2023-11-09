@@ -51,6 +51,7 @@ public class Mob : MonoBehaviour
     public GameObject HUD_Jogador2;
     public GameObject[] vidaJ1_Blocos;
     public GameObject[] vidaJ2_Blocos;
+    public GameObject plataformaMóvel;
 
     [Header("3) INIMIGO________________________________________________________________")]
     public bool ativado = true;
@@ -133,6 +134,15 @@ public class Mob : MonoBehaviour
         if (destrancar_Comporta)
         {
             transform.Find("Ícone").GetComponent<SpriteRenderer>().enabled = true;
+        }
+
+        if (plataformaMóvel != null)
+        {
+            transform.parent = plataformaMóvel.transform;
+        }
+        else
+        {
+            transform.parent = null;
         }
     }
 

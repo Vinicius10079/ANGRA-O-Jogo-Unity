@@ -6,6 +6,19 @@ public class PontoDeAparição : MonoBehaviour
 {
     public int jogador = 1;
 
+    void Start()
+    {
+        if (FindObjectOfType<Jogador1>() != null)
+        {
+            FindObjectOfType<Jogador1>().DesativarInvencibilidade();
+        }
+        if (FindObjectOfType<Jogador2>() != null)
+        {
+            FindObjectOfType<Jogador2>().DesativarInvencibilidade();
+        }
+        
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         Indicador_Jogador ind;
@@ -18,6 +31,7 @@ public class PontoDeAparição : MonoBehaviour
             ind.GetComponent<Animator>().enabled = true;
             collision.gameObject.GetComponent<Mob>().controle = Mob.Controle.nulo;
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
             StartCoroutine(IniciarControle_Jogador(collision.gameObject.GetComponent<Mob>()));
         }
     }
